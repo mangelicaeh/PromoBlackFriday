@@ -346,6 +346,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
   AOS.init({
     duration: 1000, // Duración de la animación en milisegundos
@@ -387,22 +389,48 @@
 </script>
 <script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxqqM0pwbet3GX6aDijWFW5ka6kZzWmHEfRfoYexMEDD9jH_GkraPAiBkvtrz-qg2m2/exec';
-const form = document.getElementById('contactForm');
-
-form.addEventListener('submit', e => {
-  e.preventDefault();  // Prevenir el comportamiento predeterminado del formulario
-
-  const formData = new FormData(form);  // Recoge los datos del formulario
-
-  fetch(scriptURL, {
-    method: 'POST',
-   /* mode: 'no-cors',*/
-    body: formData
-  })
-  .then(response => alert('Formulario enviado correctamente.'))
-  .catch(error => alert('Error al enviar el formulario: ' + error.message));
-});
-
+    const form = document.getElementById('contactForm');
+    
+    form.addEventListener('submit', e => {
+      e.preventDefault();  // Prevenir el comportamiento predeterminado del formulario
+    
+      const formData = new FormData(form);  // Recoge los datos del formulario
+    
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        // Mostrar un mensaje de éxito con SweetAlert2
+        Swal.fire({
+          icon: 'success',
+          title: '¡Formulario enviado!',
+          text: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.',
+          confirmButtonText: 'Cerrar',
+          background: '#e0f7fa',  // Color de fondo personalizado
+          color: '#00695c',  // Color del texto
+          confirmButtonColor: '#00897b',  // Color del botón
+          timer: 5000,  // El modal se cerrará automáticamente después de 5 segundos
+          timerProgressBar: true
+        });
+    
+        // Resetear el formulario si lo deseas
+        form.reset();
+      })
+      .catch(error => {
+        // Mostrar un mensaje de error con SweetAlert2
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al enviar',
+          text: 'Hubo un problema al enviar el formulario. Inténtalo de nuevo.',
+          footer: `<p>Detalles del error: ${error.message}</p>`,
+          background: '#ffebee',  // Fondo rojo claro
+          color: '#d32f2f',  // Texto rojo oscuro
+         confirmButtonColor: '#e57373',  // Botón rojo claro
+          confirmButtonText: 'Cerrar'
+        });
+      });
+    });
 </script>
 <script>
     // Inicializa el lightbox para el video
