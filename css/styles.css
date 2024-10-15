@@ -6135,5 +6135,182 @@ html.no-csstransitions .s-hero__content {
         margin-bottom: 10px; /* Reduce la distancia entre la imagen y el título */
     }
 }
+/* Media Queries para pantallas de 320px a 480px */
+@media (max-width: 480px) {
+    /* Ajusta el tamaño de fuente del contador */
+    .countdown .time-box {
+        font-size: 20px;  /* Reducir el tamaño de fuente */
+        padding: 5px;  /* Reducir padding para no desbordar */
+    }
 
+    /* Ajustar los márgenes del botón de registro */
+    .btn-submit {
+        font-size: 1em;  /* Ajustar el tamaño de fuente */
+        padding: 10px;  /* Reducir padding para evitar desbordes */
+    }
+
+    /* Ajusta el copyright para pantallas pequeñas */
+    .copyright {
+        font-size: 10px;  /* Más pequeño para que no se baje */
+        text-align: center;
+        padding: 5px 0;  /* Reducir padding para pantallas pequeñas */
+    }
+}
+/* Ajustes para pantallas pequeñas (320px - 480px) */
+@media (max-width: 480px) {
+    /* Ajustar tamaño del contador */
+    .countdown .time-box {
+        font-size: 16px;  /* Reducir tamaño de fuente */
+        padding: 5px;  /* Reducir el padding */
+        min-width: 50px;  /* Asegura que los bloques tengan un ancho mínimo */
+    }
+
+    /* Ajustar tamaño de la etiqueta debajo de los números */
+    .countdown .label {
+        font-size: 10px;  /* Reducir tamaño de fuente */
+    }
+
+    /* Asegurar que el contador no se desborde */
+    .countdown {
+        padding: 0 0;
+    }
+    #black-friday-sale .separator {
+         font-size: 1em;
+}
+.row  {
+    padding-right: 1vw;
+}
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+    .row{
+        margin: 0;
+    }
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+    .form-section, .contact-section {
+        margin-bottom: 50px;
+    }
+    #contactForm{
+        width:90%
+    }
+
+    .contact-map {
+        width: 80%; /* Reducir el ancho del mapa */
+        margin: 0 auto; /* Centrar el mapa */
+    }
+
+    .footer-copyright {
+        font-size: 14px; /* Ajustar tamaño para que sea legible */
+        padding: 20px 0;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    .contact-containerinfo {
+        display: flex;
+        flex-direction: column; /* Apilar verticalmente */
+    }
+
+    .contact-info {
+        width: 100%; /* Asegura que la información de contacto ocupe todo el ancho */
+        margin-bottom: 20px; /* Añade un margen para separar el mapa */
+    }
+
+    .map-container {
+        width: 100%; /* Asegura que el mapa ocupe todo el ancho */
+        margin-top: 20px; /* Añade un margen para mayor separación */
+    }
+    #hero{
+        height: 50vh;;
+    }
+}
+/* Para pantallas entre 800px y 1200px */
+@media (min-width: 800px) and (max-width: 1200px) {
+
+  .hero-section .content{
+    max-width:100%;
+    margin-right: 0%;
+    padding-top: 15%;
+}
+/* Contador en una sola línea horizontal */
+#black-friday-sale .countdown {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 100%; /* Asegurar que ocupe todo el ancho */
+    margin-bottom: 20px;
+    flex-wrap: nowrap; /* Evitar salto de línea */
+}
+
+#black-friday-sale .time-box {
+    text-align: center;
+    flex: 1; /* Asegurar que cada bloque de tiempo ocupe el mismo espacio */
+    min-width: 60px; /* Espacio mínimo para evitar que se corten */
+}
+
+#black-friday-sale .separator {
+    font-size: 2em;
+    color: white;
+    line-height: 1.5em;
+}
+
+/* Ajustar los precios */
+#black-friday-sale .price-container {
+    text-align: center;
+    margin-top:-10%
+   /* margin-bottom: 20px;
+    width: 100%;*/
+}
+
+#black-friday-sale .old-price {
+    font-size: 2.5em; /* Ajustar el tamaño del precio anterior */
+    text-decoration: line-through;
+    color: #999;
+    margin-top: -3%;
+    margin-left: 30%;
+}
+
+#black-friday-sale .new-price {
+    font-size: 5em; /* Ajustar el tamaño del nuevo precio */
+    color: yellow;
+    margin-top: 25%;
+}
+.btn{
+    align-content: center;
+}
+/* Botón ajustado */
+#black-friday-sale .btn-container {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+/* Video al final, debajo de todo */
+#black-friday-sale {
+    display: flex;
+    flex-direction: column;
+    padding-top:10px;
+}
+
+#black-friday-sale .video-container {
+    order: 2; /* Asegura que el video esté debajo de todo */
+    width: 100%;
+    margin-top: 20px;
+    clear: both; /* Asegurar que no se solape con otros elementos */
+}
+
+#black-friday-sale video {
+    width: 100%;
+}
+.countdown .label {
+    font-size: 12px;
+    margin-top: 5px;
+}
+}
 
