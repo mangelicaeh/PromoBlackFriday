@@ -272,13 +272,13 @@
                     <h3 class="newtex">Reserva tu cupo, Registrate YA!</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Nombre Completo" required>
+                            <input type="text" name="name" id="name" placeholder="Nombre Completo" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="email" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="subject" placeholder="Numero de WhatSapp" required>
+                            <input type="tel" name="subject" id="subject" placeholder="Numero de WhatSapp" required>
                         </div>
                         <button type="submit" class="btn-submit">REGISTRARSE</button>
                     </form>
@@ -396,6 +396,7 @@ form.addEventListener('submit', e => {
 
   fetch(scriptURL, {
     method: 'POST',
+   /* mode: 'no-cors',*/
     body: formData
   })
   .then(response => alert('Formulario enviado correctamente.'))
